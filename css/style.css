@@ -139,16 +139,19 @@ main section#menu { width: 100%;overflow-x: hidden;
 
 main section#menu .menuInner .menumenu{display: flex;justify-content: space-between;padding: 40px 0 40px;}
 main section#menu .menuInner .menumenu h2.title{font-size: 30px;}
-main section#menu .menuInner .menumenu ul{display: flex;justify-content: space-between;gap: 10px;}
-main section#menu .menuInner .menumenu ul li a{display: block;padding: 8px 15px; background: #ddd; color: #555;font-size: 14px;border-radius: 99px;}
-main section#menu .menuInner .menumenu ul li a:hover{background: #f6b220; color: #fff;transition: 0.1s;}
-main section#menu .menuInner .menumenu ul li a.select_menumenu{ background: #ed1c24; color: #fff;}
-main section#menu .menuInner .menumenu ul li a.bar_menumenu{ background: none; color: #ed1c24;font-size: 25px;padding: 0; display: none;}
+main section#menu .menuInner .menumenu ol{display: flex;justify-content: space-between;gap: 10px;cursor: pointer;}
+main section#menu .menuInner .menumenu ol li{display: block;padding: 10px 15px 2px; background: #ddd; color: #555;font-size: 14px;border-radius: 99px;}
+main section#menu .menuInner .menumenu ol li:hover{background: #f6b220; color: #fff;transition: 0.1s;}
+main section#menu .menuInner .menumenu ol li.select_menumenu{ background: #ed1c24; color: #fff;}
+main section#menu .menuInner .menumenu ol li.bar_menumenu{ background: none; color: #ed1c24;font-size: 25px;padding: 0; display: none;}
 
 main section#menu .menuInner .bestmenu>ul{display: flex;justify-content: space-between; flex-wrap: wrap;}
 
-main section#menu .menuInner .bestmenu>ul.bestmenuList li.eachmenu.on{display: block;width: 230px;}
+main section#menu .menuInner .bestmenu>ul.bestmenuList li.eachmenu{display: none;width: 230px;}
+main section#menu .menuInner .bestmenu>ul.bestmenuList li.eachmenu.best{display: block;width: 230px;}
+main section#menu .menuInner .bestmenu>ul.bestmenuList li.eachmenu.more{display: none;}
 main section#menu .menuInner .bestmenu>ul.bestmenuList li.eachmenu.off{display: none;}
+main section#menu .menuInner .bestmenu>ul.bestmenuList li.eachmenu.on{display: block;width: 230px;}
 
 main section#menu .menuInner .bestmenu>ul.bestmenuList li.eachmenu a{display: block;width: 230px; }
 main section#menu .menuInner .bestmenu>ul.bestmenuList li.eachmenu img{width: 230px;height: 230px;border-radius: 20px;border: #ddd 1px solid;margin: 0 auto;background-color: #fff;object-fit: contain; box-sizing: border-box;}
@@ -161,8 +164,8 @@ main section#menu .menuInner .bestmenu ul.bestmenuList li ul li div{margin-top: 
 main section#menu .menuInner .bestmenu ul.bestmenuList li ul li div svg.likeBtn{  cursor: pointer;  fill :none; stroke: #888;}
 
 /* 모어 버튼 */
-main .menu_more { width: 100%; text-align: center; margin: 30px 0; position: relative; display: flex; justify-content: center; } 
-main .menu_more a { width: 600px; padding: 0 50px; border-radius: 50px;height: 56px; line-height: 56px; display: block; text-align: center; color: #888; font-size: 18px; font-weight: 300;transition: 0.5s;  background-color: #eee;border: #888 1px solid; } 
+main .menu_more {display: block; width: 100%; text-align: center; margin: 30px 0; position: relative; display: flex; justify-content: center; } 
+main .menu_more a { display: block;width: 600px; padding: 0 50px; border-radius: 50px;height: 56px; line-height: 56px; display: block; text-align: center; color: #888; font-size: 18px; font-weight: 300;transition: 0.5s;  background-color: #eee;border: #888 1px solid; } 
 main .menu_more a:hover {background-color: #ddd; ;transition: 0.5s; } 
 
 
@@ -231,9 +234,9 @@ script{height: 0;width: 0; }
   3단 - 최대 810px
  =============================================================*/
  @media (max-width:750px) {
-  main section#menu .menuInner .menumenu ul li a{display: none;}
+  main section#menu .menuInner .menumenu ol li{display: none;}
   /* main section#menu .menuInner .menumenu ul li a.select_menumenu{ background: #ed1c24; color: #fff;} */
-  main section#menu .menuInner .menumenu ul li a.bar_menumenu{ display: block;}
+  main section#menu .menuInner .menumenu ol li.bar_menumenu{ display: block;}
  }
  
  

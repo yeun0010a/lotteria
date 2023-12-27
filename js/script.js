@@ -55,26 +55,124 @@ likeBtn.click(function () {
 
 $(function () {
 
+	var $menu = $("ol.menu_menu > li");
 	var $box = $("ul.bestmenuList");
-	var $moreBtn = $(".menu_more");
+	var $moreBtn = $(".menu_more > a");
+
+	var $best = $(".best_menumenu");
+	var $burg = $(".burg_menumenu");
+	var $dess = $(".dess_menumenu");
+	var $chic = $(".chic_menumenu");
+	var $drin = $(".drin_menumenu");
+	var $icec = $(".icec_menumenu");
 
 
 	//more버튼 클릭시
 	// "moreBtn" 요소에 대한 click 이벤트 핸들러를 등록합니다.
 	$moreBtn.on("click", function () {
-		// 클릭 시 "on" 클래스를 제거합니다.
-		$(this).removeClass("on");
-
-		// "box" 요소에 CSS를 적용하여 높이를 1788px로 설정합니다.
-		// 그리고 자식 요소들에 대해 "off" 클래스를 제거하고 "on" 클래스를 추가합니다.
-		$box.css({
-			// "height": "1788px"
-		}).children().removeClass("off").addClass("on");
-        
+		$box.children().addClass("on");
+    
         $moreBtn.css({"display":"none"})
-		// click 이벤트의 기본 동작을 막기 위해 false를 반환합니다.
 		return false;
 	});
+
+	//menu버튼 클릭시
+	$menu.on("click", function () {
+		nowidx = $(this).index();
+
+		$(this).addClass("select_menumenu").siblings().removeClass("select_menumenu");
+
+		if (nowidx == 0) {
+			manuList1();
+			$moreBtn.addClass("on");
+		} else if (nowidx == 1) {
+			manuList2();
+
+		} else if (nowidx == 2) {
+			manuList3();
+
+		} else if (nowidx == 3) {
+			manuList4();
+		} else if (nowidx == 4) {
+			manuList5();
+		} else if (nowidx == 5) {
+			manuList6();
+		} else {
+			manuList7();
+		}
+
+		return false;
+	});
+
+    
+
+	//메뉴1 - 추천
+	function manuList1() {
+
+		$(this).addClass("select_menumenu");
+
+		$(".burg,.dess,.chic,.drin,.icec,.more").removeClass("on").addClass("off");
+		$(".best").removeClass("off").addClass("on");
+
+        $moreBtn.css({"display":"block"})
+	}
+
+	//메뉴2 - 버거
+	function manuList2() {
+        
+		$(this).addClass("select_menumenu");
+
+		$(".burg").removeClass("off").addClass("on");
+		$(".dess,.chic,.drin,.icec").removeClass("on").addClass("off");
+
+        $moreBtn.css({"display":"none"})
+
+	}
+
+	//메뉴3 - 디저트
+	function manuList3() {
+		$(this).addClass("select_menumenu");
+
+		$(".dess").removeClass("off").addClass("on");
+		$(".burg,.chic,.drin,.icec").removeClass("on").addClass("off");
+
+        $moreBtn.css({"display":"none"})
+
+	}
+
+	//메뉴4 - 치킨
+	function manuList4() {
+		$(this).addClass("select_menumenu");
+
+		$(".chic").removeClass("off").addClass("on");
+		$(".burg,.dess,.drin,.icec").removeClass("on").addClass("off");
+
+        $moreBtn.css({"display":"none"})
+
+	}
+	//메뉴5 - 음료
+	function manuList5() {
+        $(this).addClass("select_menumenu");
+
+		$(".drin").removeClass("off").addClass("on");
+		$(".burg,.dess,.chic,.icec").removeClass("on").addClass("off");
+
+        $moreBtn.css({"display":"none"})
+
+	}
+	//메뉴6 - 아이스
+	function manuList6() {
+        $(this).addClass("select_menumenu");
+
+		$(".icec").removeClass("off").addClass("on");
+		$(".burg,.dess,.chic,.drin").removeClass("on").addClass("off");
+
+        $moreBtn.css({"display":"none"})
+
+	}
+
+
+
 
 
 
