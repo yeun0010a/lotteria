@@ -37,7 +37,6 @@ body { background-color: #fff; }
 #wrap header .headerInner nav.menu>ul>li.grupMenu {  display: block;box-sizing: border-box;text-align: center;position: relative;z-index: 999;height: var(--header-height); line-height: var(--header-height) ;width: 100px;} 
 #wrap header .headerInner nav.menu>ul>li.iconMenu {  display: block;box-sizing: border-box;text-align: center;height: var(--header-height); line-height: var(--header-height) ;} 
 #wrap header .headerInner nav.menu>ul>li.bar {  display: none;box-sizing: border-box;text-align: center;height: var(--header-height); line-height: var(--header-height) ;} 
-/* #wrap header .headerInner nav.menu>ul>li.grupMenu a {padding-left: 25px;}  */
 #wrap header .headerInner nav.menu>ul>li.grupMenu ul.submenu{margin-left: -40px;display: none; width: 180px;position: absolute;top:var(--header-height);box-shadow: 0 5px 5px rgba(0, 0, 0, 0.3);z-index: 99;}
 #wrap header .headerInner nav.menu>ul>li.grupMenu ul.submenu li a{width: 180px;height: 50px;  font-size: 14px;   background-color: #f5f5f5;color: #333;      display: block;text-align: center;line-height: 50px;    box-sizing: border-box;
 } 
@@ -81,22 +80,20 @@ div.swiper-button-prev { position: absolute; left: calc(50vw - var(--all-width)/
 div.swiper-button-next { position: absolute; right: calc(50vw - var(--all-width)/2 - 100px); color: #f6b220; } 
 .swiper-pagination { height: 30px; z-index: 9; } 
 /* 기본 인디케이터 스타일 */
-span.swiper-pagination-bullet { width: calc(var(--all-width) / 5); height: 8px; background-color: rgba(0, 0, 0, 0.8); border-radius: 999px; } 
+span.swiper-pagination-bullet { width: calc(var(--all-width) / 5 - 10px); height: 8px; background-color: rgba(0, 0, 0, 0.8); border-radius: 999px; } 
 /* 선택된 인디케이터 스타일 */
-span.swiper-pagination-bullet-active {width: calc(var(--all-width) / 5); height: 8px; border-radius: 999px; background-color: #f6b220; transition: width 0.5s; } 
+span.swiper-pagination-bullet-active {width: calc(var(--all-width) / 5 - 10px); height: 8px; border-radius: 999px; background-color: #f6b220; transition: width 0.5s; } 
 
 
 /* ====아이콘==== */
 main section#icon { width: 100%;   padding: 40px 0;  background-color: #f5f5f5;}
-main section#icon .iconInner ul.icons { display: flex;  
-   justify-content: space-between;  
-   /* gap: calc(var(--all-width) / 8 - var(--iconBox-size) / 8); */
-    flex-wrap: wrap; } 
-main section#icon .iconInner ul.icons li div { background-color: #fff; width: var(--iconBox-size); height: var(--iconBox-size); border-radius: 20px; text-align: center; position: relative; cursor: pointer; box-shadow: 0 0 5px rgba(0, 0, 0, 0.3); } 
+main section#icon .iconInner ul.icons { display: flex;    justify-content: space-between;    flex-wrap: wrap; } 
+main section#icon .iconInner ul.icons li  {width: calc(100%/8 - 25px); }
+main section#icon .iconInner ul.icons li div { background-color: #fff;  width: 100%;   height:110px;    border-radius: 20px; text-align: center; position: relative; cursor: pointer; box-shadow: 0 0 5px rgba(0, 0, 0, 0.3); } 
 main section#icon .iconInner ul.icons li div a { display: block;  padding-top: 30px;} 
 main section#icon .iconInner ul.icons li div a i { font-size: 35px; margin-bottom: 10px; } 
-main section#icon .iconInner ul.icons li div a p { font-size: 12px; } 
-main section#icon .iconInner ul.icons li div::after { content: ""; border: #ed1c24 2px solid; display: block; box-sizing: border-box; transition: 0.4s; border-radius: 20px; position: absolute; left: 0px; top: 0px; opacity: 0; z-index: 10; width: var(--iconBox-size); height: var(--iconBox-size); } 
+main section#icon .iconInner ul.icons li div a p { font-size: 12px; text-overflow: ellipsis; height: 12px;width: 100%;} 
+main section#icon .iconInner ul.icons li div::after { content: ""; border: #ed1c24 2px solid; display: block; box-sizing: border-box; transition: 0.4s; border-radius: 20px; position: absolute; left: 0px; top: 0px; opacity: 0; z-index: 10; width:100%;height: 100%; } 
 main section#icon .iconInner ul.icons li div:focus::after,
 main section#icon .iconInner ul.icons li div:hover::after { opacity: 1; } 
 
@@ -133,9 +130,7 @@ main .info_more a:hover i { opacity: 1; transition: 0.5s;}
 
 
 /* ====메뉴===== */
-main section#menu { width: 100%;overflow-x: hidden;
-   /* max-width: 1400px; */
-    padding-bottom: 50px; background-color: #f5f5f5;}
+main section#menu { width: 100%;overflow-x: hidden;padding-bottom: 50px; background-color: #f5f5f5;}
 
 main section#menu .menuInner .menumenu{display: flex;justify-content: space-between;padding: 40px 0 40px;}
 main section#menu .menuInner .menumenu h2.title{font-size: 30px;}
@@ -147,17 +142,17 @@ main section#menu .menuInner .menumenu ol li.bar_menumenu{ background: none; col
 
 main section#menu .menuInner .bestmenu>ul{display: flex;justify-content: space-between; flex-wrap: wrap;}
 
-main section#menu .menuInner .bestmenu>ul.bestmenuList li.eachmenu{display: none;width: 230px;}
-main section#menu .menuInner .bestmenu>ul.bestmenuList li.eachmenu.best{display: block;width: 230px;}
+main section#menu .menuInner .bestmenu>ul.bestmenuList li.eachmenu{width: calc(100%/4 - 20px);}
+main section#menu .menuInner .bestmenu>ul.bestmenuList li.eachmenu{display: none;}
+main section#menu .menuInner .bestmenu>ul.bestmenuList li.eachmenu.best{display: block;}
 main section#menu .menuInner .bestmenu>ul.bestmenuList li.eachmenu.more{display: none;}
 main section#menu .menuInner .bestmenu>ul.bestmenuList li.eachmenu.off{display: none;}
-main section#menu .menuInner .bestmenu>ul.bestmenuList li.eachmenu.on{display: block;width: 230px;}
+main section#menu .menuInner .bestmenu>ul.bestmenuList li.eachmenu.on{display: block;}
 
-main section#menu .menuInner .bestmenu>ul.bestmenuList li.eachmenu a{display: block;width: 230px; }
-main section#menu .menuInner .bestmenu>ul.bestmenuList li.eachmenu img{width: 230px;height: 230px;border-radius: 20px;border: #ddd 1px solid;margin: 0 auto;background-color: #fff;object-fit: contain; box-sizing: border-box;}
+main section#menu .menuInner .bestmenu>ul.bestmenuList li.eachmenu>a{display: block;width: 100%;}
+main section#menu .menuInner .bestmenu>ul.bestmenuList li.eachmenu img{width: 100%;height: 230px;border-radius: 20px;border: #ddd 1px solid;margin: 0 auto;background-color: #fff;object-fit: contain; box-sizing: border-box;}
 main section#menu .menuInner .bestmenu>ul.bestmenuList li.eachmenu img:hover{border: #ed1c24 2px solid;}
-main section#menu .menuInner .bestmenu ul.bestmenuList li ul{display: flex;justify-content: space-between;margin-bottom: 30px;}
-main section#menu .menuInner .bestmenu ul.bestmenuList li ul li {width: 200px;}
+main section#menu .menuInner .bestmenu ul.bestmenuList li.eachmenu ul{display: flex;justify-content: space-between;margin-bottom: 30px;}
 main section#menu .menuInner .bestmenu ul.bestmenuList li ul li p{font-size: 16px;margin: 15px 0; font-weight: 700;}
 main section#menu .menuInner .bestmenu ul.bestmenuList li ul li p b{display: block;margin: 3px 0;font-size: 14px;font-weight: 500;}
 main section#menu .menuInner .bestmenu ul.bestmenuList li ul li div{margin-top: 20px;}
@@ -209,7 +204,7 @@ script{height: 0;width: 0; }
  @media (max-width:1080px){
   .inner{width: calc(100vw - 60px);}
   .respOnly{display: block;}
-  #wrap header .headerInner nav.menu>ul{width: 280px;}
+  #wrap header .headerInner nav.menu>ul{width: 250px;}
   #wrap header .headerInner nav.menu>ul>li.grupMenu{display: none;}
   #wrap header .headerInner nav.menu>ul>li.bar {display: block;}
 
@@ -218,14 +213,16 @@ script{height: 0;width: 0; }
   #wrap section#banner { height: 40vw; } 
   span.swiper-pagination-bullet { width:  18vw; } 
   span.swiper-pagination-bullet-active {width: 18vw; } 
-  main section#icon .iconInner ul.icons {gap: 30px;}
+  main section#icon .iconInner ul.icons {gap: 15px;}
 
   main section#icon .iconInner ul.icons { display: flex;  
-    justify-content: space-between;  
-    /* gap: calc(var(--all-width) / 8 - var(--iconBox-size) / 8); */
-     flex-wrap: wrap; } 
+    justify-content: space-between;   flex-wrap: wrap; } 
 
 
+main section#menu .menuInner .bestmenu>ul.bestmenuList li.eachmenu{width: calc(100%/3 - 20px);}
+
+main section#icon .iconInner ul.icons li  {width: calc(100%/4 - 15px); }
+main section#icon .iconInner ul.icons li div a{transform: scale(1.1);padding-top: 25px;}
 
 
 
@@ -234,15 +231,53 @@ script{height: 0;width: 0; }
   3단 - 최대 810px
  =============================================================*/
  @media (max-width:750px) {
+  
   main section#menu .menuInner .menumenu ol li{display: none;}
-  /* main section#menu .menuInner .menumenu ul li a.select_menumenu{ background: #ed1c24; color: #fff;} */
   main section#menu .menuInner .menumenu ol li.bar_menumenu{ display: block;}
+  
  }
+ 
+ 
+ @media (max-width:630px) {
+  
+main section#menu .menuInner .bestmenu>ul.bestmenuList li.eachmenu{width: calc(100%/2 - 20px);}
+
+main section#icon {padding: 30px 0;}
+main section#icon .iconInner ul.icons li div {height: 90px;}
+main section#icon .iconInner ul.icons li div a{transform: scale(0.9);padding-top: 20px;} 
+
+}
  
  
  /* ===========================================================
   2단 - 최대 650px
  =============================================================*/
- @media (max-width:650px) {
+ @media (max-width:550px) {
+
+  span.swiper-pagination-bullet { width:  16vw; } 
+  span.swiper-pagination-bullet-active {width: 16vw; } 
+  
+main section#icon .iconInner ul.icons li div {height: 70px;}
+main section#icon .iconInner ul.icons li div a{transform: scale(0.7);padding-top: 10px;}
+
+
+main section#menu .menuInner .bestmenu>ul.bestmenuList li.eachmenu img{height: 150px;}
+#wrap header .headerInner nav.menu>ul {width: 170px;}
+#wrap header .headerInner nav.menu>ul>li.iconMenu{display: none;}
+
  }
+
+ @media (max-width:370px) {
+
+  
+main section#menu .menuInner .bestmenu>ul.bestmenuList li.eachmenu{width: 100%;}
+main section#menu .menuInner .bestmenu>ul.bestmenuList li.eachmenu img{height: 200px;}
+
+
+
+main section#icon .iconInner ul.icons li  {width: calc(50% - 10px); }
+main section#icon .iconInner ul.icons li div a{transform: scale(0.7);padding-top: 10px;}
+
+/* main section#menu .menuInner .bestmenu>ul.bestmenuList li.eachmenu img{height: 120px;}  */
+}
 
