@@ -254,12 +254,13 @@ main section#icon .iconInner ul.icons li div a{transform: scale(0.9);padding-top
  =============================================================*/
  @media (max-width:550px) {
 
+  .inner{width: calc(100vw - 40px);}
   span.swiper-pagination-bullet { width:  16vw; } 
   span.swiper-pagination-bullet-active {width: 16vw; } 
   
 main section#icon .iconInner ul.icons li div {height: 70px;}
 main section#icon .iconInner ul.icons li div a{transform: scale(0.7);padding-top: 10px;}
-
+main .menu_more a { width: 100%;  } 
 
 main section#menu .menuInner .bestmenu>ul.bestmenuList li.eachmenu img{height: 150px;}
 #wrap header .headerInner nav.menu>ul {width: 170px;}
@@ -269,6 +270,10 @@ main section#menu .menuInner .bestmenu>ul.bestmenuList li.eachmenu img{height: 1
 
  @media (max-width:370px) {
 
+  html {min-width: 370px;}
+
+  .inner{width: calc(100vw - 10px);}
+  #wrap header { width: 100%;  box-shadow: none}
   
 main section#menu .menuInner .bestmenu>ul.bestmenuList li.eachmenu{width: 100%;}
 main section#menu .menuInner .bestmenu>ul.bestmenuList li.eachmenu img{height: 200px;}
